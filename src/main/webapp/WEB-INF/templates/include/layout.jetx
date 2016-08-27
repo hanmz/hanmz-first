@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>${title}</title>
+  #tag layout_block_default("headContent")#end
+</head>
+<body>
+#tag layout_block_default("bodyContent")#end
+#tag layout_block_default("scriptContent")#end
+</body>
+</html>

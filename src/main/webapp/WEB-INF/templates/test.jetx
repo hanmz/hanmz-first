@@ -1,0 +1,9 @@
+#set(title="首页")
+#tag layout_block("headContent")
+#end
+#tag layout_block("bodyContent")
+<h1>Hello world test</h1>
+#end
+#tag layout_block("scriptContent")
+#end
+#include("/include/layout.jetx")
