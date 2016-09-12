@@ -23,7 +23,7 @@ public class UserService {
     return userMapper.findById(id);
   }
 
-  void insert() {
-    userMapper.insert(new User("han", "han", false, 0, Instant.now()));
+  void insert(User user) {
+    userMapper.insert(user);
   }
 }

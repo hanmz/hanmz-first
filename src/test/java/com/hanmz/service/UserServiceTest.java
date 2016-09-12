@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -30,11 +31,13 @@ public class UserServiceTest {
 
   @Test
   public void insert() {
-    userService.insert();
+    User user = new User("han", "han", false, 0, Instant.now());
+    userService.insert(user);
   }
 
   public static void main(String[] args) {
-    System.out.println(LocalDate.now());
+    System.out.println(LocalDateTime.now());
+    System.out.println(Instant.now());
   }
 
 }
