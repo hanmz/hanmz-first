@@ -23,5 +23,5 @@ public class User extends IdEntity {
   private String password;
   private boolean isAdmin;
   private int num;
-  private Instant create_time;
+  private Instant createTime;
 }

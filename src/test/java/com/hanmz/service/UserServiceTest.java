@@ -24,8 +24,8 @@ public class UserServiceTest {
 
   @Test
   public void findById() throws Exception {
-    User user = userService.findById(1);
-    System.err.println("create_time = " + user.getId());
+    User user = userService.findById(2);
+    System.err.println("create_time = " + user.getCreateTime());
   }
 
   @Test
