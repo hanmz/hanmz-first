@@ -20,7 +20,7 @@
     </settings>
     <typeHandlers>
         <typeHandler javaType="string" handler="com.github.mybatis.handler.StringTypeUtf8mb4Handler"/>
-        <typeHandler javaType="java.time.Instant" handler="com.hanmz.handler.InstantTypeHandler"/>
+        <typeHandler javaType="java.time.Instant" handler="com.hanmz.handler.InstantTypeHandlerExtends"/>
     </typeHandlers>
     <plugins>
         <plugin interceptor="com.github.mybatis.interceptor.MasterSlaveInterceptor"/>
