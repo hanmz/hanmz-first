@@ -18,13 +18,8 @@ public class JsonServiceTest {
   JsonService jsonService;
 
   @Test
-  public void han() throws Exception {
-    jsonService.han();
-  }
-
-  @Test
-  public void ze() throws Exception {
-    jsonService.ze();
+  public void show() {
+    jsonService.show();
   }
 
 }

@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.beans.factory.annotation.Value;
 
 /**
  * 与mybatis配合使用
@@ -22,6 +21,4 @@ public class User extends IdEntity {
   private String password;
   private boolean isAdmin;
   private int num;
-
-
 }

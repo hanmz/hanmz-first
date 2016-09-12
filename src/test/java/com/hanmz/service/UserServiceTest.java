@@ -1,11 +1,16 @@
 package com.hanmz.service;
 
+import com.hanmz.bean.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import java.time.Instant;
+import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * Created by hanmz on 2016/8/4.
@@ -19,13 +24,17 @@ public class UserServiceTest {
 
   @Test
   public void findById() throws Exception {
-    log.error("han {} zhao {}",123,234);
-//    userService.findById(1);
+    User user = userService.findById(1);
+    System.err.println("create_time = " + user.getId());
   }
 
   @Test
   public void insert() {
     userService.insert();
+  }
+
+  public static void main(String[] args) {
+    System.out.println(LocalDate.now());
   }
 
 }

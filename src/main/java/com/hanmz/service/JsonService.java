@@ -1,35 +1,30 @@
 package com.hanmz.service;
 
-import com.alibaba.fastjson.JSON;
-import com.hanmz.bean.User;
-import com.hanmz.bean.User1;
-import com.hanmz.bean.User2;
+import com.github.autoconf.ConfigFactory;
+import com.github.autoconf.api.IConfig;
+import com.github.autoconf.base.Config;
+import com.github.autoconf.helper.ConfigHelper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.PostConstruct;
 
 /**
  * json 测试
  * Created by hanmz on 2016/8/9.
  */
+@Slf4j
 @Service
 public class JsonService {
-  public void han() {
-    User1 user1 = new User1("han", "han", false);
-    String json = JSON.toJSONString(user1);
-    User user = JSON.parseObject(json, User.class);
-    //    System.out.println(user.getName());
+  String ttl = "20s";
+
+  @PostConstruct
+  public void init() {
+    ConfigFactory.getConfig("hanmz-first", config -> ttl = config.get("ttl", "5s"));
   }
 
-  public void ming() {
-    User user = new User("han", "han", false, 1);
-    String json = JSON.toJSONString(user);
-    User1 user1 = JSON.parseObject(json, User1.class);
-    //    System.out.println(user1.getName());
-  }
-
-  public void ze() {
-    User user = new User("han", "han", false, 1);
-    String json = JSON.toJSONString(user);
-    User2 user2 = JSON.parseObject(json, User2.class);
-    System.out.println(user2.name);
+  public void show() {
+    System.err.println("ttl = " + ttl);
+    System.err.println(ConfigHelper.getProcessInfo().getProfile());
   }
 }

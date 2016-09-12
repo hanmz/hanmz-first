@@ -5,6 +5,10 @@ import com.hanmz.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -15,12 +19,11 @@ public class UserService {
   @Autowired
   UserMapper userMapper;
 
-  public void findById(long id) {
-    User user = userMapper.findById(id);
-    System.out.println(user.isAdmin());
+  User findById(long id) {
+    return userMapper.findById(id);
   }
 
-  public void insert() {
+  void insert() {
     userMapper.insert(new User("han", "han", false, 0));
   }
 }
