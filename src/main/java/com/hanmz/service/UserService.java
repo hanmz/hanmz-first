@@ -24,6 +24,6 @@ public class UserService {
   }
 
   void insert() {
-    userMapper.insert(new User("han", "han", false, 0));
+    userMapper.insert(new User("han", "han", false, 0, Instant.now()));
   }
 }

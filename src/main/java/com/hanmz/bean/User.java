@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.Instant;
+
 /**
  * 与mybatis配合使用
  * 一定需要一个空构造函数才能工作
@@ -21,4 +23,5 @@ public class User extends IdEntity {
   private String password;
   private boolean isAdmin;
   private int num;
+  private Instant create_time;
 }
