@@ -10,6 +10,7 @@ import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.Executors;
@@ -36,8 +37,7 @@ public class KafkaConsumer {
 
   public KafkaConsumer() {
     ConfigFactory.getInstance().getConfig(configId, config -> {
-      String consumerConfigKeys = config.get("consumer.config.keys", Joiner.on(",")
-                                                                           .join("bootstrap.servers", "group.id", "fetch.min.bytes", "enable.auto.commit", "auto.commit.interval.ms", "session.timeout.ms", "connections.max.idle.ms", "key.deserializer", "value.deserializer"));
+      String consumerConfigKeys = config.get("consumer.config.keys");
       Splitter splitter = Splitter.on(CharMatcher.anyOf(", ;")).omitEmptyStrings().trimResults();
       Properties newConsumerProperties = new Properties();
       for (String key : splitter.split(consumerConfigKeys)) {
@@ -70,7 +70,7 @@ public class KafkaConsumer {
     for (int i = 0; i < consumerCount; i++) {
       org.apache.kafka.clients.consumer.KafkaConsumer consumer =
         new org.apache.kafka.clients.consumer.KafkaConsumer(consumerProperties);
-      consumer.subscribe(Arrays.asList(topic));
+      consumer.subscribe(Collections.singletonList(topic));
       ConsumerRunner consumerRunner = new ConsumerRunner(consumer, recordHandler);
       consumerRunners.add(consumerRunner);
       executor.scheduleAtFixedRate(consumerRunner, 5, 60, TimeUnit.SECONDS);
