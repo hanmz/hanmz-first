@@ -12,6 +12,11 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.concurrent.Callable;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import static org.awaitility.Awaitility.await;
+import static org.hamcrest.core.IsEqual.equalTo;
 
 /**
  * Created by hanmz on 2016/8/4.
@@ -25,15 +30,38 @@ public class UserServiceTest {
 
   @Test
   public void findById() throws Exception {
-    User user = userService.findById(1);
-    System.err.println("create_time = " + user.getCreateTime());
+    userService.jedis("");
+  }
+
+  @Test
+  public void get() throws Exception {
+    userService.get("");
+  }
+
+  @Test
+  public void findByMessage() throws Exception {
+    User user = userService.findByMessage("1111111111111114325535");
+    System.err.println(user.getMessage());
   }
 
   @Test
   public void insert() {
-    User user = new User("han", "han", false, 0, Instant.now());
-    userService.insert(user);
   }
+
+  @Test
+  public void async() {
+    AtomicInteger atomic = new AtomicInteger(0);
+    new Thread(() -> {
+      try {
+        Thread.sleep(2000);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+      atomic.incrementAndGet();
+    }).start();
+    await().untilAtomic(atomic, equalTo(1));
+  }
+
 
   public static void main(String[] args) {
     System.out.println(LocalDateTime.now());

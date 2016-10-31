@@ -24,4 +24,5 @@ public class User extends IdEntity {
   private boolean isAdmin;
   private int num;
   private Instant createTime;
+  private String message;
 }

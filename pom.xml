@@ -15,11 +15,22 @@
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
+        <!-- dubbo -->
         <dependency>
-            <groupId>com.fxiaoke</groupId>
-            <artifactId>self-registration</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>2.5.3</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.colin-lee</groupId>
+            <artifactId>jedis-spring-support</artifactId>
+        </dependency>
+
+        <!--<dependency>-->
+        <!--<groupId>com.fxiaoke</groupId>-->
+        <!--<artifactId>self-registration</artifactId>-->
+        <!--<version>1.0-SNAPSHOT</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>com.fxiaoke</groupId>
             <artifactId>logconfig-core</artifactId>
@@ -73,6 +84,14 @@
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
             <version>${joda-time.version}</version>
+        </dependency>
+
+        <!-- 异步流程测试 -->
+        <dependency>
+            <groupId>org.awaitility</groupId>
+            <artifactId>awaitility</artifactId>
+            <version>2.0.0</version>
+            <scope>test</scope>
         </dependency>
 
         <!--lombok 代码生成工具，简化编码-->

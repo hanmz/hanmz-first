@@ -17,7 +17,7 @@ public interface UserMapper extends ICrudMapper<User> {
   @Select("SELECT num FROM user WHERE id=#{id}")
   int selectById(@Param("id") Long id);
 
-  @Select("SELECT * FROM user WHERE is_admin=false")
-  List<User> selectByIsAdmin();
+  @Select("SELECT * FROM user WHERE message=#{message}")
+  User findByMessage(@Param("message") String message);
 
 }
