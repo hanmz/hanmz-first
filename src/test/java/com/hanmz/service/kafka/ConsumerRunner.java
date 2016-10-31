@@ -31,7 +31,7 @@ public class ConsumerRunner implements Runnable {
     try {
       while (!closed.get()) {
         // 轮询，最大阻塞时间1分钟
-        ConsumerRecords records = consumer.poll(1000);
+        ConsumerRecords records = consumer.poll(1000 * 10);
         recordHandler.handle(records);
       }
     } catch (WakeupException e) {
