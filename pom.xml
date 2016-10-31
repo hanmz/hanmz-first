@@ -14,7 +14,23 @@
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
 
+
+    <properties>
+        <kafka-client-version>0.9.0.1</kafka-client-version>
+    </properties>
+
     <dependencies>
+        <dependency>
+            <groupId>com.fxiaoke.common</groupId>
+            <artifactId>fs-kafka-support</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <!-- kafka -->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>${kafka-client-version}</version>
+        </dependency>
         <!-- dubbo -->
         <dependency>
             <groupId>com.alibaba</groupId>
