@@ -1,0 +1,10 @@
+consumer.count=1
+consumer.config.keys=bootstrap.servers,group.id,fetch.min.bytes,enable.auto.commit,auto.commit.interval.ms,session.timeout.ms,key.deserializer,value.deserializer
+bootstrap.servers = 1192.168.100.101:9092,92.168.100.102:9092,92.168.100.103:9092
+group.id=autoconf
+fetch.min.bytes=1
+enable.auto.commit=true
+auto.commit.interval.ms=10000
+session.timeout.ms=30000
+key.deserializer=org.apache.kafka.common.serialization.StringDeserializer
+value.deserializer=org.apache.kafka.common.serialization.StringDeserializer

@@ -27,10 +27,11 @@ public class KafkaConsumer {
   private Properties consumerProperties = null;
   private ScheduledExecutorService executor;
   private List<ConsumerRunner> consumerRunners = Lists.newArrayList();
-  private String configId = "config-kafka-consumer";
+  private String configId = "hanmz-kafka-consumer";
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws InterruptedException {
     new KafkaConsumer();
+    Thread.sleep(1000 * 60 * 60);
   }
 
   public KafkaConsumer() {
