@@ -37,7 +37,7 @@ public class KafkaProducer implements AutoCloseable {
     for (int i = 0; i < 100; i++) {
       try {
         System.out.println(i);
-        sender.send("hanmz-test", JSON.toJSONString(i));
+        sender.send("hanmz-test-1", JSON.toJSONString(i));
         Thread.sleep(1000);
       } catch (InterruptedException e) {
         e.printStackTrace();

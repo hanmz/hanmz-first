@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Slf4j
 public class KafkaConsumer {
-  private String topic = "hanmz-test";
+  private String topic = "hanmz-test-1";
   private RecordHandler recordHandler = new TestHandler();
   private Properties consumerProperties = null;
   private ScheduledExecutorService executor;
