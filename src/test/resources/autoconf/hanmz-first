@@ -1,1 +1,2 @@
-ttl=11s
+dubbo.zookeeper=zookeeper://172.31.109.100:2181
+dubbo.port=12072
