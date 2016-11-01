@@ -38,6 +38,11 @@
             <version>2.5.3</version>
         </dependency>
         <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>0.1</version>
+        </dependency>
+        <dependency>
             <groupId>com.github.colin-lee</groupId>
             <artifactId>jedis-spring-support</artifactId>
         </dependency>

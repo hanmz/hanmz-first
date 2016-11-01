@@ -6,7 +6,6 @@
 
     <!-- 提供方应用信息，用于计算依赖关系 -->
     <dubbo:application name="provider-hello-world-app" owner="hanmz" logger="slf4j"/>
-    <dubbo:protocol port="${dubbo.port}"/>
 
     <!-- 使用multicast广播注册中心暴露服务地址 -->
     <dubbo:registry address="${dubbo.zookeeper}"/>

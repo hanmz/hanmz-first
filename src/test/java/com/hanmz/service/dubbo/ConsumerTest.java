@@ -10,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class ConsumerTest {
 
   public static void main(String[] args) throws Exception {
-    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring-dubbo-consumer.xml");
+    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:consumer.xml");
 
     context.start();
 
