@@ -1,9 +1,8 @@
 consumer.count=1
-consumer.config.keys=fetch.max.wait.ms,bootstrap.servers,group.id,fetch.min.bytes,enable.auto.commit,auto.commit.interval.ms,session.timeout.ms,key.deserializer,value.deserializer
+consumer.config.keys=bootstrap.servers,group.id,fetch.min.bytes,enable.auto.commit,auto.commit.interval.ms,session.timeout.ms,key.deserializer,value.deserializer
 bootstrap.servers = 192.168.100.101:9092,192.168.100.102:9092,192.168.100.103:9092
 group.id=hanmz
-fetch.min.bytes=1000
-fetch.max.wait.ms=5000
+fetch.min.bytes=1
 enable.auto.commit=true
 auto.commit.interval.ms=10000
 session.timeout.ms=30000
