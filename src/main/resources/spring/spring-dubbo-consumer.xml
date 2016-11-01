@@ -6,7 +6,7 @@
 
     <!-- 提供方应用信息，用于计算依赖关系 -->
     <dubbo:application name="consumer-hello-world-app" owner="hanmz" logger="slf4j"/>
-    <dubbo:protocol port="1234"/>
+    <dubbo:protocol port="${dubbo.port}"/>
 
     <!-- dubbo query-->
     <dubbo:registry id="zoo" address="${dubbo.zookeeper}"/>
