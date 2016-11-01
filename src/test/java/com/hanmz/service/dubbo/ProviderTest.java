@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class ProviderTest {
   public static void main(String[] args) throws Exception {
     ClassPathXmlApplicationContext context =
-      new ClassPathXmlApplicationContext("classpath:spring/spring-dubbo-provider.xml");
+      new ClassPathXmlApplicationContext("classpath:provider.xml");
     context.start();
 
     System.in.read(); // 按任意键退出
