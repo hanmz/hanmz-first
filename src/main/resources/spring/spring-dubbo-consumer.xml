@@ -9,7 +9,7 @@
     <dubbo:protocol port="${dubbo.port}"/>
 
     <!-- dubbo query-->
-    <dubbo:registry id="demo" address="${dubbo.zookeeper}"/>
-    <dubbo:reference id="demoService" interface="com.hanmz.api.DemoService" timeout="20000" registry="demo"/>
+    <dubbo:registry id="demoService" address="${dubbo.zookeeper}"/>
+    <dubbo:reference id="demo" interface="com.hanmz.api.DemoService" timeout="20000" registry="demoService"/>
 
 </beans>
