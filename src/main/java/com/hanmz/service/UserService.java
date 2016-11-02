@@ -24,15 +24,16 @@ public class UserService {
   @Resource
   private JedisCmd jedis;
 
-  public void jedis(String key) {
-    System.out.println(jedis.exists("han"));
-    jedis.set("han", "123");
-    System.out.println(jedis.exists("han"));
-    System.out.println(jedis.get("han"));
+  public void set(String key, String value) {
+    jedis.set(key, value);
   }
 
-  public void get(String key) {
-    System.out.println(jedis.get("han"));
+  public String get(String key) {
+    return jedis.get(key);
+  }
+
+  public Long del(String... key) {
+    return jedis.del(key);
   }
 
   User findById(long id) {

@@ -16,7 +16,7 @@
     <import resource="classpath:spring/spring-db.xml"/>
     <import resource="classpath:spring/spring-guava.xml"/>
     <import resource="classpath:spring/spring-redis.xml"/>
-    <import resource="classpath:spring/spring-dubbo-provider.xml"/>
+    <!--<import resource="classpath:spring/spring-dubbo-provider.xml"/>-->
 
     <context:component-scan base-package="com.hanmz.service"/>
 

@@ -30,12 +30,12 @@ public class UserServiceTest {
 
   @Test
   public void findById() throws Exception {
-    userService.jedis("");
-  }
-
-  @Test
-  public void get() throws Exception {
-    userService.get("");
+    userService.set("han1", "hh");
+    userService.set("han1", "ss");
+    System.out.println(userService.get("han0"));
+    System.out.println(userService.get("han1"));
+    System.out.println(userService.del("han1"));
+    System.out.println(userService.get("han1"));
   }
 
   @Test
