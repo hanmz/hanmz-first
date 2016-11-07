@@ -21,6 +21,22 @@
 
     <dependencies>
         <dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-core</artifactId>
+            <version>1.5.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-runtime</artifactId>
+            <version>1.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-core</artifactId>
+            <version>1.5.7</version>
+        </dependency>
+        <dependency>
             <groupId>com.fxiaoke.common</groupId>
             <artifactId>fs-kafka-support</artifactId>
             <version>1.0.1</version>
