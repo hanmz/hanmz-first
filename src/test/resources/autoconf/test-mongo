@@ -1,0 +1,9 @@
+mongo.servers = mongodb://localhost:27017
+mongo.dbName = test-mongo
+mongo.mapPackage = com.hanmz.bean
+mongo.connectTimeout = 5000
+mongo.socketTimeout = 60000
+encrypt.pwd = false
+mongo.readPreference=secondary
+mongo.maxWaitTime=60000
+mongo.maxConnectionsPerHost=60

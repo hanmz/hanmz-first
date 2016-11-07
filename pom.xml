@@ -21,6 +21,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.github.colin-lee</groupId>
+            <artifactId>mongo-spring-support</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>io.protostuff</groupId>
             <artifactId>protostuff-core</artifactId>
             <version>1.5.2</version>
