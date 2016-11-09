@@ -1,2 +1,200 @@
 dubbo.zookeeper=zookeeper://172.31.109.100:2181
 dubbo.port=12072
+
+han=<table class="table table-bordered table-hover">
+    <tr>
+    <th>运维</th>
+    <th>监控</th>
+    </tr>
+    <tr>
+    <td>
+      <a href="/publish/deploy/">发布系统</a>
+      <a href="/cms/">配置中心</a>
+      <a href="/user/">用户权限</a>
+      <a href="//mon.foneshare.cn/">OpsPlatform</a>
+      <a href="//cmdb.foneshare.cn/index.php/">CMDB</a>
+    </td>
+    <td>
+      <a href="/oss/">服务监控</a>
+      <a href="/oss/trace/">调用跟踪</a>
+      <a href="/console/">RocketMQ监控</a>
+      <a href="/taokeeper/">Zookeeper监控</a>
+      <a href="//172.31.101.12:9200/_plugin/kopf/">ElasticSearch</a>
+    </td>
+    </tr>
+    <tr>
+    <th>常用</th>
+    <th>代码相关</th>
+    </tr>
+    <tr>
+    <td>
+      <a href="//wiki.firstshare.cn/">Confluence</a>
+      <a href="https://www.tapd.cn/">TAPD</a>
+      <a href="//mail.fxiaoke.com">邮箱</a>
+      <a href="http://wiki.firstshare.cn/">Jira</a>
+      <a href="/jenkins/">Jenkins</a>
+    </td>
+    <td>
+      <a href="//git.firstshare.cn/">Git仓库</a>
+      <a href="//oss.firstshare.cn/artifactory/">Maven仓库(Artifactory)</a>
+      <a href="/sonarqube/">SonarQube</a>
+      <a href="http://oss.firstshare.cn/fisheye/">FishEye</a>
+    </td>
+    </tr>
+    <tr>
+    <th>接口定义</th>
+    <th>日志相关</th>
+    </tr>
+    <tr>
+    <td>
+      <a href="//rap.firstshare.cn">RAP</a>
+      <a href="http://oss.firstshare.cn/swagger-ui/">swagger-ui</a>
+      <a href="http://oss.firstshare.cn/swagger-api/">swagger-api</a>
+      <a href="http://172.31.160.165:8004/">swagger-edit</a>
+    </td>
+    <td>
+      <a href="/logconf/">日志级别调整</a>
+      <a href="//kibana.firstshare.cn/">kibana</a>
+      <a href="http://172.31.102.114:9011/" target="_blank">Kafka Manager</a>
+      <a href="//oss.firstshare.cn/socketlog/">客户端日志</a>
+    </td>
+    </tr>
+    <tr>
+    <th>Dubbo管理(root:fsdevops)</th>
+    <th>其他</th>
+    </tr>
+    <tr>
+    <td>
+      <a href="/fte/">FTE</a>
+      <a href="/fte2/">FTE2</a>
+      <a href="/sde/">SDE</a>
+      <a href="/pte/">PTE</a>
+      <a href="/fsceshi/">fsceshi</a>
+      <a href="/fstest/">fstest</a>
+    </td>
+    <td>
+      <a href="/cp/">代理系统</a>
+      <a href="/reverse/">反向代理</a>
+      <a href="/bims/">BI后台管理系统</a>
+      <a href="//172.31.101.12:8083/">InfluxDB</a>
+      <a href="//172.31.101.12:3000/" target="_blank">Grafana</a>
+    </td>
+    </tr>
+    <tr>
+    <th>蜂云</th>
+    <th></th>
+    </tr>
+    <tr>
+    <td>
+      <a href="/kylin/">麒麟BI</a>
+      <a href="/buriedtool/">埋点监控</a>
+      <a href="/gathertool/">数据采集</a>
+       <a href="/cctrl-center/">云控中心</a>
+       <a href="/mlplatform/">机器学习</a>
+       <a href="/datafactory/">数据工厂</a>
+    </td>
+    <td>
+      <a href="//log.firstshare.cn/">日志中心Kibana(guest/Admin1234)</a>
+        <a href="/starter/">脚手架</a>
+    </td>
+    </tr>
+    </table>
+
+ming = <table class="table table-bordered table-hover">
+       <tr>
+       <th>运维</th>
+       <th>监控</th>
+       </tr>
+       <tr>
+       <td>
+         <a href="/publish/deploy/">发布系统</a>
+         <a href="/cms/">配置中心</a>
+         <a href="/user/">用户权限</a>
+         <a href="//mon.foneshare.cn/">OpsPlatform</a>
+         <a href="//cmdb.foneshare.cn/index.php/">CMDB</a>
+       </td>
+       <td>
+         <a href="/oss/">服务监控</a>
+         <a href="/oss/trace/">调用跟踪</a>
+         <a href="/console/">RocketMQ监控</a>
+         <a href="/taokeeper/">Zookeeper监控</a>
+         <a href="//172.31.101.12:9200/_plugin/kopf/">ElasticSearch</a>
+       </td>
+       </tr>
+       <tr>
+       <th>常用</th>
+       <th>代码相关</th>
+       </tr>
+       <tr>
+       <td>
+         <a href="//wiki.firstshare.cn/">Confluence</a>
+         <a href="https://www.tapd.cn/">TAPD</a>
+         <a href="//mail.fxiaoke.com">邮箱</a>
+         <a href="http://wiki.firstshare.cn/">Jira</a>
+         <a href="/jenkins/">Jenkins</a>
+       </td>
+       <td>
+         <a href="//git.firstshare.cn/">Git仓库</a>
+         <a href="//oss.firstshare.cn/artifactory/">Maven仓库(Artifactory)</a>
+         <a href="/sonarqube/">SonarQube</a>
+         <a href="http://oss.firstshare.cn/fisheye/">FishEye</a>
+       </td>
+       </tr>
+       <tr>
+       <th>接口定义</th>
+       <th>日志相关</th>
+       </tr>
+       <tr>
+       <td>
+         <a href="//rap.firstshare.cn">RAP</a>
+         <a href="http://oss.firstshare.cn/swagger-ui/">swagger-ui</a>
+         <a href="http://oss.firstshare.cn/swagger-api/">swagger-api</a>
+         <a href="http://172.31.160.165:8004/">swagger-edit</a>
+       </td>
+       <td>
+         <a href="/logconf/">日志级别调整</a>
+         <a href="//kibana.firstshare.cn/">kibana</a>
+         <a href="http://172.31.102.114:9011/" target="_blank">Kafka Manager</a>
+         <a href="//oss.firstshare.cn/socketlog/">客户端日志</a>
+       </td>
+       </tr>
+       <tr>
+       <th>Dubbo管理(root:fsdevops)</th>
+       <th>其他</th>
+       </tr>
+       <tr>
+       <td>
+         <a href="/fte/">FTE</a>
+         <a href="/fte2/">FTE2</a>
+         <a href="/sde/">SDE</a>
+         <a href="/pte/">PTE</a>
+         <a href="/fsceshi/">fsceshi</a>
+         <a href="/fstest/">fstest</a>
+       </td>
+       <td>
+         <a href="/cp/">代理系统</a>
+         <a href="/reverse/">反向代理</a>
+         <a href="/bims/">BI后台管理系统</a>
+         <a href="//172.31.101.12:8083/">InfluxDB</a>
+         <a href="//172.31.101.12:3000/" target="_blank">Grafana</a>
+       </td>
+       </tr>
+       <tr>
+       <th>蜂云</th>
+       <th></th>
+       </tr>
+       <tr>
+       <td>
+         <a href="/kylin/">麒麟BI</a>
+         <a href="/buriedtool/">埋点监控</a>
+         <a href="/gathertool/">数据采集</a>
+          <a href="/cctrl-center/">云控中心</a>
+          <a href="/mlplatform/">机器学习</a>
+          <a href="/datafactory/">数据工厂</a>
+       </td>
+       <td>
+         <a href="//log.firstshare.cn/">日志中心Kibana(guest/Admin1234)</a>
+           <a href="/starter/">脚手架</a>
+       </td>
+       </tr>
+       </table>
