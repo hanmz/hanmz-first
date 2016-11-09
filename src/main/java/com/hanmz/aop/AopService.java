@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class AopService {
   private AopHandler aopHandler = new AopHandler();
 
-//  @Around(value = "execution(* com.hanmz.service.UserService.*(..))")
+  @Around(value = "execution(* com.hanmz.service.UserService.*(..))")
   public Object aroundEmailService(ProceedingJoinPoint joinPoint) throws Throwable {
     Stopwatch sw = Stopwatch.createStarted();
     Signature signature = joinPoint.getSignature();
