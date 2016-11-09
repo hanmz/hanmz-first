@@ -1,4 +1,4 @@
-package com.hanmz.service;
+package com.hanmz.aop;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;

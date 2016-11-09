@@ -5,8 +5,8 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <aop:aspectj-autoproxy>
-        <aop:include name="serviceTraceAspect"/>
+        <aop:include name="aopService"/>
     </aop:aspectj-autoproxy>
 
-    <bean id="aopService" class="com.hanmz.service.AopService"/>
+    <bean id="aopService" class="com.hanmz.aop.AopService"/>
 </beans>

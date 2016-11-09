@@ -1,4 +1,4 @@
-package com.hanmz.service;
+package com.hanmz.aop;
 
 import com.google.common.base.Stopwatch;
 import lombok.extern.slf4j.Slf4j;
@@ -8,7 +8,6 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Handler;
 
 /**
  * Created by hanmz on 2016/11/9.
@@ -18,7 +17,7 @@ import java.util.logging.Handler;
 public class AopService {
   private AopHandler aopHandler = new AopHandler();
 
-  @Around(value = "execution(* com.hanmz.service.UserService.*(..))")
+//  @Around(value = "execution(* com.hanmz.service.UserService.*(..))")
   public Object aroundEmailService(ProceedingJoinPoint joinPoint) throws Throwable {
     Stopwatch sw = Stopwatch.createStarted();
     Signature signature = joinPoint.getSignature();
