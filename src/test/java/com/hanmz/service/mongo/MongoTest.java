@@ -31,9 +31,9 @@ public class MongoTest {
     context.start();
     datastore = (DatastoreExt) context.getBean("mongoDatastore");
 
-    insert();
-    //    query();
-    //    find();
+    //    insert();
+    query();
+    //        find();
   }
 
   private static void insert() {
@@ -57,7 +57,7 @@ public class MongoTest {
       datastore.find(TestEntity.class).filter("time <=", System.currentTimeMillis() + 1000 * 60 * 60);
 
     UpdateOperations<TestEntity> updateOperations =
-      datastore.createUpdateOperations(TestEntity.class).inc("time", 1000 * 60);
+      datastore.createUpdateOperations(TestEntity.class).inc("time", 1000 * 60 * 60).set("blank", "null");
 
     List<TestEntity> list = Lists.newArrayList();
     for (int i = 0; i < 10; i++) {
