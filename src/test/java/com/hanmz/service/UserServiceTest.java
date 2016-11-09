@@ -37,35 +37,4 @@ public class UserServiceTest {
     System.out.println(userService.del("han1"));
     System.out.println(userService.get("han1"));
   }
-
-  @Test
-  public void findByMessage() throws Exception {
-    User user = userService.findByMessage("1111111111111114325535");
-    System.err.println(user.getMessage());
-  }
-
-  @Test
-  public void insert() {
-  }
-
-  @Test
-  public void async() {
-    AtomicInteger atomic = new AtomicInteger(0);
-    new Thread(() -> {
-      try {
-        Thread.sleep(2000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
-      atomic.incrementAndGet();
-    }).start();
-    await().untilAtomic(atomic, equalTo(1));
-  }
-
-
-  public static void main(String[] args) {
-    System.out.println(LocalDateTime.now());
-    System.out.println(Instant.now());
-  }
-
 }

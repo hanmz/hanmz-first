@@ -8,5 +8,5 @@
         <aop:include name="serviceTraceAspect"/>
     </aop:aspectj-autoproxy>
 
-    <bean id="serviceTraceAspect" class="com.hanmz.service.UserService"/>
+    <bean id="aopService" class="com.hanmz.service.AopService"/>
 </beans>
