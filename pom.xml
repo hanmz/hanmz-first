@@ -21,6 +21,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.hankcs</groupId>
+            <artifactId>aho-corasick-double-array-trie</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
             <groupId>com.github.colin-lee</groupId>
             <artifactId>mongo-spring-support</artifactId>
         </dependency>

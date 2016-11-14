@@ -1,3 +1,5 @@
 masterUrl=jdbc:mysql://127.0.0.1:3306/hanmz?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
 username=root
 password=1234
+
+dirtyWords=哈哈哈,啦啦啦

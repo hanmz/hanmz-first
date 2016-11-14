@@ -31,9 +31,9 @@ public class MongoTest {
     context.start();
     datastore = (DatastoreExt) context.getBean("mongoDatastore");
 
-    //    insert();
-    query();
-    //        find();
+//    insert();
+        query();
+//        find();
   }
 
   private static void insert() {

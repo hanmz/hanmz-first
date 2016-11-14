@@ -1,6 +1,7 @@
 package com.hanmz.service.dubbo;
 
 import com.hanmz.api.DemoService;
+import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -18,5 +19,10 @@ public class ConsumerTest {
     String hello = demoService.sayHello("world"); // 执行远程方法
 
     System.out.println(hello); // 显示调用结果
+  }
+
+  @Test
+  public void han() {
+    System.out.println(123);
   }
 }

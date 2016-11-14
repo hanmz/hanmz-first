@@ -1,6 +1,7 @@
 package com.hanmz.service;
 
 import com.hanmz.bean.User;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,5 +32,8 @@ public class UserServiceTest {
   @Test
   public void findById() throws Exception {
     userService.set("han1", "hh");
+    Date date = new Date();
+    System.out.println(date.getTime());
+    System.out.println(System.currentTimeMillis());
   }
 }
