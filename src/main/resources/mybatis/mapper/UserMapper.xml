@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hanmz.mapper.UserMapper">
+    <select id="findByNums" parameterType="java.util.List" resultType="com.hanmz.bean.User">
+        SELECT * FROM user WHERE num in
+        <foreach collection="nums" item="num" index="index" open="(" separator="," close=")">
+            ${num}
+        </foreach>
+    </select>
+</mapper>

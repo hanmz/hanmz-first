@@ -1,8 +1,6 @@
 package com.hanmz.service;
 
 import com.github.autoconf.ConfigFactory;
-import com.github.autoconf.api.IConfig;
-import com.github.autoconf.base.Config;
 import com.github.autoconf.helper.ConfigHelper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

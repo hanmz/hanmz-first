@@ -2,9 +2,8 @@ package com.hanmz.bean;
 
 import com.github.mybatis.entity.IdEntity;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.time.Instant;
 
@@ -14,8 +13,7 @@ import java.time.Instant;
  * <p>
  * Created by hanmz on 2016/8/4.
  */
-@Setter
-@Getter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class User extends IdEntity {
@@ -25,4 +23,5 @@ public class User extends IdEntity {
   private int num;
   private Instant createTime;
   private String message;
+  private JsonBean json;
 }

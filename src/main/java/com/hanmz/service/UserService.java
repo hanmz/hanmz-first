@@ -1,17 +1,15 @@
 package com.hanmz.service;
 
 import com.github.jedis.support.JedisCmd;
+import com.google.common.collect.Lists;
+import com.hanmz.aop.ParamAnno;
+import com.hanmz.bean.CountRelation;
+import com.hanmz.bean.JsonBean;
 import com.hanmz.bean.User;
 import com.hanmz.mapper.UserMapper;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -19,8 +17,8 @@ import java.util.List;
  */
 @Service
 public class UserService {
-  @Autowired
-  UserMapper userMapper;
+  @Resource
+  private UserMapper userMapper;
   @Resource
   private JedisCmd jedis;
 
@@ -28,25 +26,92 @@ public class UserService {
     jedis.set(key, value);
   }
 
-  public String get(String key) {
-    return jedis.get(key);
+  List<CountRelation> count() {
+    return userMapper.count();
   }
 
-  public Long del(String... key) {
-    return jedis.del(key);
+  @ParamAnno
+  int countAll(String test, List<String> list, int value, int[] ints, Object o1, Object o2) {
+    return userMapper.countAll();
   }
 
+  @ParamAnno
+  int countAll() {
+    return userMapper.countAll();
+  }
+
+  int countName() {
+    String condition = "('1','han')";
+    return userMapper.countName(condition);
+  }
+
+  List<User> findEntityByList() {
+    List<String> conditions = Lists.newArrayList("");
+    StringBuilder sb = new StringBuilder();
+    sb.append("(");
+    conditions.forEach(c -> sb.append("'").append(c).append("'").append(','));
+    if (sb.charAt(sb.length() - 1) == ',') {
+      sb.replace(sb.length() - 1, sb.length(), ")");
+    } else {
+      sb.append(")");
+    }
+    return userMapper.findEntityByList(sb.toString());
+  }
+
+  int userObj() {
+    User user = new User();
+    user.setName("2");
+    return userMapper.userObj(user);
+  }
+
+  int countPerson() {
+    return userMapper.countPerson();
+  }
+
+  void deletePerson() {
+    userMapper.deletePerson("dshjkfshdjkf");
+  }
+
+  int sum() {
+    return userMapper.sum();
+  }
+
+  /**
+   * 插入对象
+   */
+  long insertObject() {
+    User user = new User();
+    user.setName("hanmz");
+    user.setPassword("hanmz");
+    user.setAdmin(true);
+
+    user.setJson(JsonBean.builder().valStr("hanmz").valInt(123).build());
+    userMapper.insertAndSetObjectId(user);
+    return user.getId();
+  }
+
+  /**
+   * 插入对象
+   */
   User findById(long id) {
     return userMapper.findById(id);
-  }
-
-  User findByMessage(String message) {
-    return userMapper.findByMessage(message);
   }
 
   void insert(User user) {
     int i = userMapper.insert(user);
     long j = user.getId();
     System.out.println(i);
+  }
+
+  void test(String like, String notLike) {
+    System.out.println(userMapper.test(like, notLike).size());
+  }
+
+  void test1(String query) {
+    System.out.println(userMapper.test1(query).size());
+  }
+
+  void list(List<Long> query) {
+    System.out.println(userMapper.findByNums(query).size());
   }
 }

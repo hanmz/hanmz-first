@@ -9,7 +9,7 @@ import java.util.Set;
 /**
  * Created by hanmz on 2016/8/22.
  */
-public class TomcatConfig{
+public class TomcatConfig {
 
   public void getHttpPort() {
     try {

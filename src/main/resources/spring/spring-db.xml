@@ -13,10 +13,13 @@
 
     <!-- define the SqlSessionFactory -->
     <bean id="configSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"
-          p:dataSource-ref="configDataSource" p:typeAliasesPackage="com.hanmz.bean"
-          p:configLocation="classpath:mybatis/mybatis-config.xml"/>
+          p:dataSource-ref="configDataSource"
+          p:typeAliasesPackage="com.hanmz.bean"
+          p:configLocation="classpath:mybatis/mybatis-config.xml"
+          p:mapperLocations="classpath:mybatis/mapper/*.xml"/>
 
     <!-- scan for mapper and let them be autowired -->
-    <bean class="com.github.mybatis.spring.ScannerConfigurer" p:basePackage="com.hanmz.mapper"
+    <bean class="com.github.mybatis.spring.ScannerConfigurer"
+          p:basePackage="com.hanmz.mapper"
           p:sqlSessionFactoryBeanName="configSqlSessionFactory"/>
 </beans>
