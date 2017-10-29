@@ -4,9 +4,11 @@ import com.github.mybatis.mapper.ICrudMapper;
 import com.hanmz.bean.CountRelation;
 import com.hanmz.bean.User;
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.DeleteProvider;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
@@ -23,9 +25,6 @@ public interface UserMapper extends ICrudMapper<User> {
 
   @Select("SELECT name,count(*) as count FROM user GROUP BY name")
   List<CountRelation> count();
-
-  @Select("SELECT count(*) FROM user")
-  int countAll();
 
   @Select("SELECT count(*) FROM user WHERE name IN ${condition}")
   int countName(@Param("condition") String condition);
@@ -55,6 +54,12 @@ public interface UserMapper extends ICrudMapper<User> {
   List<User> test1(@Param("query") String query);
 
   List<User> findByNums(@Param("nums") List<Long> num);
+
+  @SelectProvider(type = MyProvider.class, method = "select")
+  List<User> selectByFields(User user, String... fields);
+
+  @DeleteProvider(type = MyProvider.class, method = "delete")
+  void deleteByFields(User user, String... fields);
 
 
 }

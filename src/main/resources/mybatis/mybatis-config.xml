@@ -27,7 +27,7 @@
     <plugin interceptor="com.github.mybatis.interceptor.MasterSlaveInterceptor"/>
     <plugin interceptor="com.github.mybatis.interceptor.PaginationAutoMapInterceptor"/>
   </plugins>
-  <mappers>
-    <package name="com.github.mybatis.mapper"/>
-  </mappers>
+  <!--<mappers>-->
+    <!--<package name="com.github.mybatis.mapper"/>-->
+  <!--</mappers>-->
 </configuration>

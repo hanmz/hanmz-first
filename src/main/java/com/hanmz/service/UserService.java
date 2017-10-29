@@ -98,9 +98,15 @@ public class UserService {
   }
 
   void insert(User user) {
-    int i = userMapper.insert(user);
-    long j = user.getId();
-    System.out.println(i);
+    userMapper.insert(user);
+  }
+
+  void deleteByFields(User user, String... fields) {
+    userMapper.deleteByFields(user, fields);
+  }
+
+  List<User> selectByFields(User user, String... fields) {
+    return userMapper.selectByFields(user, fields);
   }
 
   void test(String like, String notLike) {

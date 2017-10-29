@@ -82,6 +82,32 @@ public class UserServiceTest {
   }
 
   @Test
+  public void insertTest() throws Exception {
+    User user = User.builder().name("hanmz").build();
+    userService.insert(user);
+  }
+
+  /**
+   * 重要
+   */
+  @Test
+  public void selectByFieldsTest() throws Exception {
+    User user = User.builder().name("hanmz").build();
+    List<User> users = userService.selectByFields(user, "name");
+    System.out.println(users);
+  }
+
+  /**
+   * 重要
+   */
+  @Test
+  public void deleteByFieldsTest() throws Exception {
+    //    User user = User.builder().name("sss' or `name`='hanmz").build();
+    User user = User.builder().name("hanmz").build();
+    userService.deleteByFields(user, "name");
+  }
+
+  @Test
   public void countPerson() throws Exception {
     userService.deletePerson();
   }

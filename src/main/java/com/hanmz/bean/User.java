@@ -2,6 +2,7 @@ package com.hanmz.bean;
 
 import com.github.mybatis.entity.IdEntity;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,6 +17,7 @@ import java.time.Instant;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class User extends IdEntity {
   private String name;
   private String password;
