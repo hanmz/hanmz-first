@@ -92,7 +92,7 @@ public class UserServiceTest {
    */
   @Test
   public void selectByFieldsTest() throws Exception {
-    User user = User.builder().name("hanmz").build();
+    User user = User.builder().name("sss").build();
     List<User> users = userService.selectByFields(user, "name");
     System.out.println(users);
   }

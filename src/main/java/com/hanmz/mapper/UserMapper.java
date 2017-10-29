@@ -1,5 +1,6 @@
 package com.hanmz.mapper;
 
+import com.github.mybatis.annotation.AutoResultMap;
 import com.github.mybatis.mapper.ICrudMapper;
 import com.hanmz.bean.CountRelation;
 import com.hanmz.bean.User;
@@ -56,6 +57,7 @@ public interface UserMapper extends ICrudMapper<User> {
   List<User> findByNums(@Param("nums") List<Long> num);
 
   @SelectProvider(type = MyProvider.class, method = "select")
+  @AutoResultMap
   List<User> selectByFields(User user, String... fields);
 
   @DeleteProvider(type = MyProvider.class, method = "delete")
