@@ -17,6 +17,19 @@ import static com.github.mybatis.util.EntityUtil.nameConvert;
  */
 public class MyProvider {
   /**
+   * 按指定字段更新
+   */
+  public String update(final Object obj, String updateStatement, String... fields) {
+    final PersistMeta meta = EntityUtil.getMeta(obj.getClass());
+    return new SQL() {
+      {
+        UPDATE(getTableName(meta, obj)).SET(updateStatement);
+        setWhere(this, obj, fields);
+      }
+    }.toString();
+  }
+
+  /**
    * 按指定字段查询
    */
   public String select(final Object obj, String... fields) {

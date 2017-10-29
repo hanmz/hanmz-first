@@ -91,6 +91,15 @@ public class UserServiceTest {
    * 重要
    */
   @Test
+  public void updateByFieldsTest() throws Exception {
+    User user = User.builder().name("sss").build();
+    userService.updateByFields(user, "num='1',message='test'", "name");
+  }
+
+  /**
+   * 重要
+   */
+  @Test
   public void selectByFieldsTest() throws Exception {
     User user = User.builder().name("sss").build();
     List<User> users = userService.selectByFields(user, "name");

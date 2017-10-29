@@ -11,6 +11,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.UpdateProvider;
 
 import java.util.List;
 
@@ -55,6 +56,9 @@ public interface UserMapper extends ICrudMapper<User> {
   List<User> test1(@Param("query") String query);
 
   List<User> findByNums(@Param("nums") List<Long> num);
+
+  @UpdateProvider(type = MyProvider.class, method = "update")
+  void updateByFields(User user, String statement, String... fields);
 
   @SelectProvider(type = MyProvider.class, method = "select")
   @AutoResultMap

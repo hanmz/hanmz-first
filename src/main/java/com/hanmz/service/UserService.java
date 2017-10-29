@@ -101,12 +101,16 @@ public class UserService {
     userMapper.insert(user);
   }
 
-  void deleteByFields(User user, String... fields) {
-    userMapper.deleteByFields(user, fields);
+  void updateByFields(User user, String statement, String... fields) {
+    userMapper.updateByFields(user, statement, fields);
   }
 
   List<User> selectByFields(User user, String... fields) {
     return userMapper.selectByFields(user, fields);
+  }
+
+  void deleteByFields(User user, String... fields) {
+    userMapper.deleteByFields(user, fields);
   }
 
   void test(String like, String notLike) {
