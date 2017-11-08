@@ -85,7 +85,7 @@ public class UserService {
     user.setPassword("hanmz");
     user.setAdmin(true);
 
-    user.setJson(JsonBean.builder().valStr("hanmz").valInt(123).build());
+    user.setJson(Lists.newArrayList(JsonBean.builder().valStr("韩明泽").valInt(123).build()));
     userMapper.insertAndSetObjectId(user);
     return user.getId();
   }

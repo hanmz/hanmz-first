@@ -1,12 +1,15 @@
 package com.hanmz.bean;
 
+import com.alibaba.fastjson.JSONObject;
 import com.github.mybatis.entity.IdEntity;
+import com.google.common.collect.Lists;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.Instant;
+import java.util.List;
 
 /**
  * 与mybatis配合使用
@@ -25,5 +28,18 @@ public class User extends IdEntity {
   private int num;
   private Instant createTime;
   private String message;
-  private JsonBean json;
+  private List<JsonBean> json;
+
+  public void setJson(List list) {
+    if (list == null) {
+      json = null;
+    } else if (list.isEmpty()) {
+      json = Lists.newArrayList();
+    } else if (JsonBean.class.equals(list.get(0).getClass())) {
+      json = (List<JsonBean>) list;
+    } else {
+      json = JSONObject.parseArray(list.toString(), JsonBean.class);
+    }
+  }
+
 }

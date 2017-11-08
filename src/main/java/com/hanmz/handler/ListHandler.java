@@ -14,10 +14,10 @@ import java.sql.SQLException;
  * <p>
  * Created by hanmz on 2016/9/12.
  */
-public class JsonHandler<T> extends BaseTypeHandler<T> {
+public class ListHandler<T> extends BaseTypeHandler<T> {
   private final Class<T> javaType;
 
-  public JsonHandler(Class<T> javaType) {
+  public ListHandler(Class<T> javaType) {
     this.javaType = javaType;
   }
 

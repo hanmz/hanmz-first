@@ -21,13 +21,13 @@
   <typeHandlers>
     <typeHandler javaType="string" handler="com.github.mybatis.handler.StringTypeUtf8mb4Handler"/>
     <typeHandler javaType="java.time.Instant" handler="com.hanmz.handler.InstantTypeHandlerExtends"/>
-    <typeHandler javaType="com.hanmz.bean.JsonBean" handler="com.hanmz.handler.JsonHandler"/>
+    <typeHandler javaType="java.util.List" handler="com.hanmz.handler.JsonHandler"/>
   </typeHandlers>
   <plugins>
     <plugin interceptor="com.github.mybatis.interceptor.MasterSlaveInterceptor"/>
     <plugin interceptor="com.github.mybatis.interceptor.PaginationAutoMapInterceptor"/>
   </plugins>
   <!--<mappers>-->
-    <!--<package name="com.github.mybatis.mapper"/>-->
+  <!--<package name="com.github.mybatis.mapper"/>-->
   <!--</mappers>-->
 </configuration>
