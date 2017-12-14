@@ -1,6 +1,5 @@
 package com.hanmz.service;
 
-import com.github.jedis.support.JedisCmd;
 import com.google.common.collect.Lists;
 import com.hanmz.aop.ParamAnno;
 import com.hanmz.bean.CountRelation;
@@ -19,12 +18,6 @@ import java.util.List;
 public class UserService {
   @Resource
   private UserMapper userMapper;
-  @Resource
-  private JedisCmd jedis;
-
-  public void set(String key, String value) {
-    jedis.set(key, value);
-  }
 
   List<CountRelation> count() {
     return userMapper.count();
@@ -45,8 +38,8 @@ public class UserService {
     return userMapper.countName(condition);
   }
 
-  List<User> findEntityByList() {
-    List<String> conditions = Lists.newArrayList("");
+  public List<User> findEntityByList() {
+    List<String> conditions = Lists.newArrayList("1", "2", "3");
     StringBuilder sb = new StringBuilder();
     sb.append("(");
     conditions.forEach(c -> sb.append("'").append(c).append("'").append(','));
@@ -79,7 +72,7 @@ public class UserService {
   /**
    * 插入对象
    */
-  long insertObject() {
+  public long insertObject() {
     User user = new User();
     user.setName("hanmz");
     user.setPassword("hanmz");
@@ -91,15 +84,41 @@ public class UserService {
   }
 
   /**
-   * 插入对象
+   * 查找
    */
-  User findById(long id) {
+  public User findById(long id) {
     return userMapper.findById(id);
   }
 
-  void insert(User user) {
+  public List<User> findAll() {
+    return userMapper.findAll();
+  }
+
+  /**
+   * 插入
+   */
+  public void insert(User user) {
     userMapper.insert(user);
   }
+
+  /**
+   * 删除
+   */
+  public void deleteById(Long id) {
+    userMapper.deleteById(id);
+  }
+
+  public void delete(User user) {
+    userMapper.delete(user);
+  }
+
+  /**
+   * 更新
+   */
+  public void update(User user) {
+    userMapper.update(user);
+  }
+
 
   void updateByFields(User user, String statement, String... fields) {
     userMapper.updateByFields(user, statement, fields);

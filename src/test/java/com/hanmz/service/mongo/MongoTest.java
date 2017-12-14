@@ -1,24 +1,13 @@
 package com.hanmz.service.mongo;
 
-import com.github.autoconf.ConfigFactory;
 import com.github.mongo.support.DatastoreExt;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 import com.hanmz.bean.TestEntity;
-import com.sun.tools.doclets.internal.toolkit.util.DocFinder;
-import org.bson.types.ObjectId;
 import org.mongodb.morphia.query.Query;
 import org.mongodb.morphia.query.UpdateOperations;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import javax.persistence.Entity;
-import java.io.InputStream;
-import java.io.PrintStream;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by hanmz on 2016/11/7.

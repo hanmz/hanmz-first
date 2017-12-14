@@ -1,6 +1,7 @@
 package com.hanmz.service;
 
 import com.google.common.collect.Lists;
+import com.google.common.util.concurrent.Uninterruptibles;
 import com.hanmz.bean.CountRelation;
 import com.hanmz.bean.User;
 import lombok.extern.slf4j.Slf4j;
@@ -10,8 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by hanmz on 2016/8/4.
@@ -22,14 +23,6 @@ import java.util.List;
 public class UserServiceTest {
   @Autowired
   private UserService userService;
-
-  @Test
-  public void findById() throws Exception {
-    userService.set("han1", "hh");
-    Date date = new Date();
-    System.out.println(date.getTime());
-    System.out.println(System.currentTimeMillis());
-  }
 
   @Test
   public void count() throws Exception {
@@ -54,8 +47,11 @@ public class UserServiceTest {
 
   @Test
   public void findEntityByList() throws Exception {
-    List<User> list = userService.findEntityByList();
-    System.out.println(list.size());
+    int i = 100;
+    while (i-- > 0) {
+      List<User> list = userService.findEntityByList();
+      System.out.println(list.size());
+    }
   }
 
   @Test
@@ -72,13 +68,16 @@ public class UserServiceTest {
   public void insertObject() throws Exception {
     userService.insertObject();
 
+    Uninterruptibles.sleepUninterruptibly(5, TimeUnit.SECONDS);
   }
 
   @Test
   public void jsonHandlerTest() throws Exception {
     long id = userService.insertObject();
     User user = userService.findById(id);
+
     System.out.println(user);
+    Uninterruptibles.sleepUninterruptibly(5, TimeUnit.SECONDS);
   }
 
   @Test
@@ -134,5 +133,12 @@ public class UserServiceTest {
   @Test
   public void list() throws Exception {
     userService.list(Lists.newArrayList(1L, 2L, 3L));
+  }
+
+  @Test
+  public void mutiInsert() throws Exception {
+    for (int i = 0; i < 10000; i++) {
+      userService.insert(User.builder().name("hanmz").build());
+    }
   }
 }
